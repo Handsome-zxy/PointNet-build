@@ -9,12 +9,27 @@ sys.path.append(BASE_DIR)
 DATA_DIR = os.path.join(BASE_DIR, 'data')
 if not os.path.exists(DATA_DIR):
     os.mkdir(DATA_DIR)
+
+
+def download_modelnet40():
+    """Download and extract ModelNet40 HDF5 files (official Stanford URL is
+    not reachable from some networks; a HuggingFace mirror is used by default).
+    Override with the MODELNET40_URL environment variable if needed."""
+    import urllib.request
+    import zipfile
+    url = os.environ.get(
+        'MODELNET40_URL',
+        'https://hf-mirror.com/datasets/Msun/modelnet40/resolve/main/'
+        'modelnet40_ply_hdf5_2048.zip')
+    zip_path = os.path.join(DATA_DIR, 'modelnet40_ply_hdf5_2048.zip')
+    urllib.request.urlretrieve(url, zip_path)
+    with zipfile.ZipFile(zip_path) as zf:
+        zf.extractall(DATA_DIR)
+    os.remove(zip_path)
+
+
 if not os.path.exists(os.path.join(DATA_DIR, 'modelnet40_ply_hdf5_2048')):
-    www = 'https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip'
-    zipfile = os.path.basename(www)
-    os.system('wget %s; unzip %s' % (www, zipfile))
-    os.system('mv %s %s' % (zipfile[:-4], DATA_DIR))
-    os.system('rm %s' % (zipfile))
+    download_modelnet40()
 
 
 def shuffle_data(data, labels):
@@ -85,7 +100,7 @@ def jitter_point_cloud(batch_data, sigma=0.01, clip=0.05):
     return jittered_data
 
 def getDataFiles(list_filename):
-    return [line.rstrip() for line in open(list_filename)]
+    return [os.path.join(BASE_DIR, line.rstrip()) for line in open(list_filename)]
 
 def load_h5(h5_filename):
     f = h5py.File(h5_filename)

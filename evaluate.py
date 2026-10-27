@@ -1,11 +1,12 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import numpy as np
 import argparse
 import socket
 import importlib
 import time
 import os
-import scipy.misc
+from PIL import Image
 import sys
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
@@ -151,14 +152,14 @@ def eval_one_epoch(sess, ops, num_votes=1, topk=1):
                                                            SHAPE_NAMES[pred_val[i-start_idx]])
                     img_filename = os.path.join(DUMP_DIR, img_filename)
                     output_img = pc_util.point_cloud_three_views(np.squeeze(current_data[i, :, :]))
-                    scipy.misc.imsave(img_filename, output_img)
+                    Image.fromarray(np.uint8(np.clip(output_img, 0, 1) * 255.0)).save(img_filename)
                     error_cnt += 1
                 
     log_string('eval mean loss: %f' % (loss_sum / float(total_seen)))
     log_string('eval accuracy: %f' % (total_correct / float(total_seen)))
-    log_string('eval avg class acc: %f' % (np.mean(np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float))))
+    log_string('eval avg class acc: %f' % (np.mean(np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float32))))
     
-    class_accuracies = np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float)
+    class_accuracies = np.array(total_correct_class)/np.array(total_seen_class,dtype=np.float32)
     for i, name in enumerate(SHAPE_NAMES):
         log_string('%10s:\t%0.3f' % (name, class_accuracies[i]))
     

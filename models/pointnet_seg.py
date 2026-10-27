@@ -1,4 +1,5 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import numpy as np
 import math
 import sys
@@ -19,8 +20,8 @@ def placeholder_inputs(batch_size, num_point):
 
 def get_model(point_cloud, is_training, bn_decay=None):
     """ Classification PointNet, input is BxNx3, output BxNx50 """
-    batch_size = point_cloud.get_shape()[0].value
-    num_point = point_cloud.get_shape()[1].value
+    batch_size = point_cloud.get_shape()[0]
+    num_point = point_cloud.get_shape()[1]
     end_points = {}
 
     with tf.variable_scope('transform_net1') as sc:
@@ -61,7 +62,7 @@ def get_model(point_cloud, is_training, bn_decay=None):
     print(global_feat)
 
     global_feat_expand = tf.tile(global_feat, [1, num_point, 1, 1])
-    concat_feat = tf.concat(3, [point_feat, global_feat_expand])
+    concat_feat = tf.concat([point_feat, global_feat_expand], axis=3)
     print(concat_feat)
 
     net = tf_util.conv2d(concat_feat, 512, [1,1],
@@ -94,15 +95,15 @@ def get_loss(pred, label, end_points, reg_weight=0.001):
         label: BxN, """
     loss = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=pred, labels=label)
     classify_loss = tf.reduce_mean(loss)
-    tf.scalar_summary('classify loss', classify_loss)
+    tf.summary.scalar('classify loss', classify_loss)
 
     # Enforce the transformation as orthogonal matrix
     transform = end_points['transform'] # BxKxK
-    K = transform.get_shape()[1].value
+    K = transform.get_shape()[1]
     mat_diff = tf.matmul(transform, tf.transpose(transform, perm=[0,2,1]))
     mat_diff -= tf.constant(np.eye(K), dtype=tf.float32)
     mat_diff_loss = tf.nn.l2_loss(mat_diff) 
-    tf.scalar_summary('mat_loss', mat_diff_loss)
+    tf.summary.scalar('mat_loss', mat_diff_loss)
 
     return classify_loss + mat_diff_loss * reg_weight
 

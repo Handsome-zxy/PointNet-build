@@ -1,0 +1,8 @@
+# PointNet (TensorFlow 1.x code) running on TF2 compat.v1 + GPU
+# Python 3.13
+tensorflow[and-cuda]==2.21.0
+numpy
+h5py
+matplotlib
+pillow
+scipy
