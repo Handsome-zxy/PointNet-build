@@ -1,0 +1,12 @@
+{
+  "extends": "base.json",
+  "train": {
+    "max_steps": 2000,
+    "val_every_steps": 500,
+    "early_stop_patience": 4
+  },
+  "run": {
+    "arm": "pilot",
+    "pilot": true
+  }
+}

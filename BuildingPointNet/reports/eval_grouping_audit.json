@@ -1,0 +1,43 @@
+{
+  "perm_seed": 20261028,
+  "splits": {
+    "val": {
+      "split": "val",
+      "windows": 9,
+      "points_per_block": 4096,
+      "cache_order": {
+        "chunks": 2994,
+        "pure_building": 2684,
+        "pure_nonbuilding": 301,
+        "mixed": 9,
+        "mean_building_fraction": 0.8979709092664495
+      },
+      "fixed_permutation": {
+        "chunks": 2994,
+        "pure_building": 1,
+        "pure_nonbuilding": 0,
+        "mixed": 2993,
+        "mean_building_fraction": 0.8995386291479581
+      }
+    },
+    "test": {
+      "split": "test",
+      "windows": 35,
+      "points_per_block": 4096,
+      "cache_order": {
+        "chunks": 4289,
+        "pure_building": 2980,
+        "pure_nonbuilding": 1287,
+        "mixed": 22,
+        "mean_building_fraction": 0.6978281331968408
+      },
+      "fixed_permutation": {
+        "chunks": 4289,
+        "pure_building": 0,
+        "pure_nonbuilding": 277,
+        "mixed": 4012,
+        "mean_building_fraction": 0.6997263299493752
+      }
+    }
+  }
+}

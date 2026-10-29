@@ -1,0 +1,138 @@
+{
+  "protocol_version": "BuildingPointNet-v1-review-corrected",
+  "created_at": "2026-10-28T15:00:05.674389",
+  "project_root": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet",
+  "training": {
+    "max_steps": 8000,
+    "batch_size": 8,
+    "points_per_block": 4096,
+    "window_size_m": 30.0,
+    "window_stride_m": 15.0,
+    "class_weight_mode": "none",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "warmup_steps": 500,
+    "end_learning_rate": 1e-05,
+    "val_every_steps": 1000,
+    "early_stop_patience": 4
+  },
+  "evaluation": {
+    "perm_seed": 20261028,
+    "chunking": "fixed label-independent permutation per window, then 4096-point chunks",
+    "threshold_grid": [
+      0.01,
+      0.99,
+      0.01
+    ],
+    "threshold_selection": "validation mIoU",
+    "checkpoint_selection": "validation mIoU at tuned threshold",
+    "ap": "sklearn average_precision_score / tie-grouped fallback",
+    "report_metrics": [
+      "OA",
+      "balanced_accuracy",
+      "building F1/IoU",
+      "non-building F1/IoU",
+      "macro F1",
+      "mIoU",
+      "AP",
+      "confusion matrix"
+    ]
+  },
+  "data": {
+    "manifest_hash": "e9bbd0f26d72867085a2261ec73429cf9a8bf4112d8d2b2eba0c0944f907c0de",
+    "counts": {
+      "build_small": 18426342,
+      "noise_small": 3113465,
+      "small_total": 21539807,
+      "test": 4059791,
+      "conflicting_noise_removed": 2122,
+      "duplicate_build_within_class": 513230,
+      "duplicate_noise_within_class": 103220
+    },
+    "split_counts": {
+      "train": {
+        "total": 18463748,
+        "building": 15982332,
+        "nonbuilding": 2481416
+      },
+      "val": {
+        "total": 2959202,
+        "building": 2443136,
+        "nonbuilding": 516066
+      },
+      "buffer": {
+        "total": 114735,
+        "building": 874,
+        "nonbuilding": 113861
+      },
+      "ignore": {
+        "total": 2122,
+        "building": 0,
+        "nonbuilding": 2122
+      }
+    },
+    "test_label_counts": {
+      "building": 2476850,
+      "nonbuilding": 1582941,
+      "ignore": 0
+    },
+    "z_ref": 93.76,
+    "class_weights": [
+      1.0,
+      1.0
+    ],
+    "class_weight_mode": "none",
+    "val_box": [
+      405420.0,
+      405480.0,
+      3112685.0,
+      3112733.0
+    ],
+    "buffer_box": [
+      405415.0,
+      405485.0,
+      3112680.0,
+      3112738.0
+    ]
+  },
+  "test_usage": {
+    "strict_unseen": false,
+    "development_seen_runs": [
+      "20261028_135939_tnet_on_s1234_pilot"
+    ],
+    "policy": "training does not evaluate test by default; final test only once after this freeze, not for tuning",
+    "note": "A strict unseen test would require freezing a new independent region; pending user approval."
+  },
+  "code_hashes": {
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/configs/base.json": "16fc62a6085eaff22d2a220f370a398e2023d087f6aa4568962665f2eaf89fc4",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/configs/tnet_on.json": "d3f6ef75352a6e386e000c241285cac0db6010b9a18c12d5e7d3d71e406cc660",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/configs/tnet_off.json": "41013107e11f43c8fa115e537b01b1b9f9fe801556f97806a40346bdbe291975",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/cache/manifest.json": "e9bbd0f26d72867085a2261ec73429cf9a8bf4112d8d2b2eba0c0944f907c0de",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/DESIGN.md": "dcf6f0f29395027ed5b27f2325a3c9f0c10d565e8f2ae834c14ebe1eaf26e6d7",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/README.md": "3aa660a6cd8f629d9b3684d204f5535abb666ea1b165c6afe768a366bd355099",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/reports/test_set_usage.md": "6e497545613f3f5a7da67d38eac2f5f043f05a13b809154316548ce6850c5c03",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/__init__.py": "3f67367bdf6e941aaeb5158606fc19301b0153abb195211cf94b52f6f081c919",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/config.py": "9cd02f5892616eb2b3869d0c1ddaab3c585543c570a005aeb6f7da1736f34dfd",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/data_prep.py": "03ba84f1bf335e8cfa33a4645a3c26cf45f96e78b9d526fe8dd696fc8a45da53",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/dataset.py": "f211844c472348cd1cb28c6eec26445041889ffa93867cfd3743cc2a52456740",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/evaluate.py": "e60375dbe105a65fd92e5fd58be4148dbd7f19253298fef841f9f6a0dc9e5aa4",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/las_utils.py": "6efcf0b5ad29a98a948ec2f95c340b33333cef6b555bdd69a342d7766e1843be",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/logging_utils.py": "32d3d05c2d750a13e1d5a49a47d07ee3fffc599d5cf38da7442302b677cbf6c2",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/metrics.py": "8cf01f5d5213092a603a20100f834b770a52840c02a323b871e09a3355d8a214",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/model.py": "dbc79197339a542381aa4fc11c6c65f55c285b1b6ca7edf36b481eb3b84e4205",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/predict.py": "1a2225053b85530f7ef95a3a5102bc3a44164e022aecf99802fe16ca82d979f3",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/tf_util.py": "86d41300dc984c72652d0301cfeeb7796406856669ff37661220c8b93a36ad93",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/train.py": "dbca6ef110562ee7168935fbb3da70248fe47840c447c1e6b5735c0e44c34097",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/src/building_pointnet/transform_nets.py": "a1adfb25b6611cf44a5dbd3d21605f03088f14d7a50191b5d7b0674df8254471",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/audit_eval_grouping.py": "af7aa2a5ae7090806ee29e156bed232c4506d82a337fc1bf536f4b15bfe6849d",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/evaluate_final_test.py": "7b066a21afa8fb8b1a1b73d5bd5d6da4652af589f77e092ef4710e0b55fbd77b",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/export_val_errors.py": "80f1589e46521da1b8d3c040415b1d17d52ee4a4b6286ca62278426805a1fabf",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/freeze_final_test_candidate.py": "718ebab4a2f24c292f6b334941b1eaa3a6cb5a38e231243db9d1d2be74a027a9",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/freeze_protocol.py": "71952fe75771b2b879f7f6808490fb2e6a60c6feadf3211534308722b33353bb",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/prepare_data.py": "3507c517f6d81c96164374a0498d32c39f662d2ac000adffe14951b5f3e6bb08",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/prepare_final_test_candidate.py": "28ee9484b53a40d4dfc1b745a580a8329929560d5a9bfabea9ca28990db84005",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/reevaluate_checkpoint.py": "5e00a5db967cfc5ecf3eeb455c60f39c0c175e1c7054fde721e5bfae27b89196",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/scripts/run_experiment.py": "ea31ec26f1304e25fdab0272f3a35e58c0a14a14572262605b2505e7412797f8",
+    "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/tests/test_metrics.py": "52f0191631cc0e7eb48e502454af0e007c3161a36ddccade11c9edc878010b31"
+  }
+}

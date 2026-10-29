@@ -1,0 +1,59 @@
+{
+  "project_root": ".",
+  "data": {
+    "raw_dir": "../Data/Train_Data/train_data",
+    "build_small": "non_ground_points_build_small.las",
+    "noise_small": "non_ground_points_noise_small.las",
+    "test": "non_ground_points_big_validation.las",
+    "build_big": "non_ground_points_build_big.las",
+    "noise_big": "non_ground_points_noise_big.las",
+    "cache_dir": "cache",
+    "val_box": [405420.0, 405480.0, 3112685.0, 3112733.0],
+    "buffer_margin": 5.0,
+    "window_size": 30.0,
+    "window_stride": 15.0,
+    "points_per_block": 4096,
+    "min_window_points": 512,
+    "rgb_scale": 65280.0,
+    "conflict_policy": "building_priority"
+  },
+  "model": {
+    "use_input_tnet": true,
+    "use_feature_tnet": true,
+    "num_classes": 2,
+    "dropout": 0.5,
+    "reg_weight": 0.001
+  },
+  "train": {
+    "batch_size": 8,
+    "steps_per_epoch": 200,
+    "epochs": 40,
+    "max_steps": 8000,
+    "learning_rate": 0.001,
+    "end_learning_rate": 0.00001,
+    "warmup_steps": 500,
+    "grad_clip": 1.0,
+    "dice_weight": 1.0,
+    "class_weight_mode": "none",
+    "val_every_steps": 1000,
+    "early_stop_patience": 4,
+    "schedule_seed": 20261028,
+    "augment": {
+      "rotate_z": true,
+      "translate_xy_m": 3.0,
+      "jitter_m": 0.01
+    }
+  },
+  "eval": {
+    "batch_size": 8,
+    "threshold": 0.5,
+    "ignore_unmatched": true,
+    "perm_seed": 20261028
+  },
+  "seed": 1234,
+  "gpu": 1,
+  "run": {
+    "arm": "base",
+    "pilot": false
+  }
+}

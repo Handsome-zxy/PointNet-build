@@ -1,0 +1,10 @@
+tensorflow[and-cuda]==2.21.0
+numpy
+h5py
+matplotlib
+pillow
+scipy
+laspy>=2.7
+lazrs>=0.8
+scikit-learn
+tqdm

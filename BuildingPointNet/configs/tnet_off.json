@@ -1,0 +1,10 @@
+{
+  "extends": "base.json",
+  "model": {
+    "use_input_tnet": false
+  },
+  "run": {
+    "arm": "tnet_off",
+    "pilot": false
+  }
+}

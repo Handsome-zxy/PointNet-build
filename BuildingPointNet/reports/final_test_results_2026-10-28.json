@@ -1,0 +1,642 @@
+{
+  "candidate_las": "cache/final_test_candidate_2026-10-28.las",
+  "candidate_sha256": "a598c00a0248ccb0989ffbc73dac1dad92dfff5a011e8d42c88a0ee548fb2413",
+  "candidate_frozen": true,
+  "protocol": "each model uses its own validation-selected checkpoint and validation-optimal threshold; no test tuning",
+  "models": [
+    {
+      "arm": "tnet_on",
+      "seed": 1234,
+      "run_dir": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_150011_tnet_on_s1234",
+      "threshold_from_validation": 0.54,
+      "checkpoint": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_150011_tnet_on_s1234/best_model.ckpt",
+      "candidate_sha256": "a598c00a0248ccb0989ffbc73dac1dad92dfff5a011e8d42c88a0ee548fb2413",
+      "test_at_validation_threshold": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 991274.0,
+        "tn": 987538.0,
+        "fp": 30240.0,
+        "fn": 541685.0,
+        "oa": 0.7757804901093291,
+        "balanced_accuracy": 0.8084645621493025,
+        "building_precision": 0.97039688149159,
+        "building_recall": 0.6466409082043291,
+        "building_f1": 0.7761084184487368,
+        "building_iou": 0.6341316748539373,
+        "nonbuilding_precision": 0.6457776269386479,
+        "nonbuilding_recall": 0.970288216094276,
+        "nonbuilding_f1": 0.7754515997441698,
+        "nonbuilding_iou": 0.6332551653998845,
+        "macro_f1": 0.7757800090964533,
+        "miou": 0.6336934201269109,
+        "building_ap": 0.9681644296663521
+      },
+      "test_at_0.5": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1079212.0,
+        "tn": 982111.0,
+        "fp": 35667.0,
+        "fn": 453747.0,
+        "oa": 0.8081283958322634,
+        "balanced_accuracy": 0.834480897149767,
+        "building_precision": 0.9680081874355871,
+        "building_recall": 0.704005782281196,
+        "building_f1": 0.8151646739717461,
+        "building_iou": 0.6879982863984149,
+        "nonbuilding_precision": 0.6839889459821236,
+        "nonbuilding_recall": 0.964956012018338,
+        "nonbuilding_f1": 0.8005352057110345,
+        "nonbuilding_iou": 0.6674103396136661,
+        "macro_f1": 0.8078499398413903,
+        "miou": 0.6777043130060405,
+        "building_ap": 0.9681644296663521
+      },
+      "constant_building_baseline": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1532959.0,
+        "tn": 0.0,
+        "fp": 1017778.0,
+        "fn": 0.0,
+        "oa": 0.6009866952178919,
+        "balanced_accuracy": 0.5,
+        "building_precision": 0.6009866952178919,
+        "building_recall": 1.0,
+        "building_f1": 0.7507703805572207,
+        "building_iou": 0.6009866952178919,
+        "nonbuilding_precision": 0.0,
+        "nonbuilding_recall": 0.0,
+        "nonbuilding_f1": 0.0,
+        "nonbuilding_iou": 0.0,
+        "macro_f1": 0.37538519027861034,
+        "miou": 0.30049334760894597,
+        "building_ap": 0.6009866952178919
+      },
+      "confusion_matrix": [
+        [
+          987538,
+          30240
+        ],
+        [
+          541685,
+          991274
+        ]
+      ],
+      "metrics_path": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_150011_tnet_on_s1234/final_test/final_test_metrics.json"
+    },
+    {
+      "arm": "tnet_off",
+      "seed": 1234,
+      "run_dir": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_160340_tnet_off_s1234",
+      "threshold_from_validation": 0.7100000000000001,
+      "checkpoint": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_160340_tnet_off_s1234/best_model.ckpt",
+      "candidate_sha256": "a598c00a0248ccb0989ffbc73dac1dad92dfff5a011e8d42c88a0ee548fb2413",
+      "test_at_validation_threshold": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1199643.0,
+        "tn": 997576.0,
+        "fp": 20202.0,
+        "fn": 333316.0,
+        "oa": 0.8614055467106173,
+        "balanced_accuracy": 0.881358897831731,
+        "building_precision": 0.9834388795297764,
+        "building_recall": 0.7825669179671472,
+        "building_f1": 0.8715789427797984,
+        "building_iou": 0.7723880524942359,
+        "nonbuilding_precision": 0.7495544341689634,
+        "nonbuilding_recall": 0.9801508776963149,
+        "nonbuilding_f1": 0.8494816215134523,
+        "nonbuilding_iou": 0.7383468507742614,
+        "macro_f1": 0.8605302821466254,
+        "miou": 0.7553674516342487,
+        "building_ap": 0.9779017544294195
+      },
+      "test_at_0.5": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1346242.0,
+        "tn": 972232.0,
+        "fp": 45546.0,
+        "fn": 186717.0,
+        "oa": 0.9089427879079655,
+        "balanced_accuracy": 0.9167239405339216,
+        "building_precision": 0.9672751884626107,
+        "building_recall": 0.8781983079782303,
+        "building_f1": 0.9205869772667516,
+        "building_iou": 0.8528588759617486,
+        "nonbuilding_precision": 0.8388910987455013,
+        "nonbuilding_recall": 0.9552495730896129,
+        "nonbuilding_f1": 0.893297138318218,
+        "nonbuilding_iou": 0.8071698097542954,
+        "macro_f1": 0.9069420577924848,
+        "miou": 0.830014342858022,
+        "building_ap": 0.9779017544294195
+      },
+      "constant_building_baseline": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1532959.0,
+        "tn": 0.0,
+        "fp": 1017778.0,
+        "fn": 0.0,
+        "oa": 0.6009866952178919,
+        "balanced_accuracy": 0.5,
+        "building_precision": 0.6009866952178919,
+        "building_recall": 1.0,
+        "building_f1": 0.7507703805572207,
+        "building_iou": 0.6009866952178919,
+        "nonbuilding_precision": 0.0,
+        "nonbuilding_recall": 0.0,
+        "nonbuilding_f1": 0.0,
+        "nonbuilding_iou": 0.0,
+        "macro_f1": 0.37538519027861034,
+        "miou": 0.30049334760894597,
+        "building_ap": 0.6009866952178919
+      },
+      "confusion_matrix": [
+        [
+          997576,
+          20202
+        ],
+        [
+          333316,
+          1199643
+        ]
+      ],
+      "metrics_path": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_160340_tnet_off_s1234/final_test/final_test_metrics.json"
+    },
+    {
+      "arm": "tnet_on",
+      "seed": 2345,
+      "run_dir": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_163403_tnet_on_s2345",
+      "threshold_from_validation": 0.67,
+      "checkpoint": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_163403_tnet_on_s2345/best_model.ckpt",
+      "candidate_sha256": "a598c00a0248ccb0989ffbc73dac1dad92dfff5a011e8d42c88a0ee548fb2413",
+      "test_at_validation_threshold": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1170958.0,
+        "tn": 975751.0,
+        "fp": 42027.0,
+        "fn": 362001.0,
+        "oa": 0.8416034267743009,
+        "balanced_accuracy": 0.8612809230726979,
+        "building_precision": 0.9653524157347371,
+        "building_recall": 0.7638547410596108,
+        "building_f1": 0.8528637146278293,
+        "building_iou": 0.7434720054654455,
+        "nonbuilding_precision": 0.7293960315514385,
+        "nonbuilding_recall": 0.9587071050857849,
+        "nonbuilding_f1": 0.8284768183805767,
+        "nonbuilding_iou": 0.707179193189634,
+        "macro_f1": 0.840670266504203,
+        "miou": 0.7253255993275397,
+        "building_ap": 0.971126871837737
+      },
+      "test_at_0.5": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1312570.0,
+        "tn": 937849.0,
+        "fp": 79929.0,
+        "fn": 220389.0,
+        "oa": 0.8822622638084601,
+        "balanced_accuracy": 0.8888500512248272,
+        "building_precision": 0.9426003178458296,
+        "building_recall": 0.8562329455647542,
+        "building_f1": 0.8973432536033674,
+        "building_iou": 0.8138010822822167,
+        "nonbuilding_precision": 0.8097204546906595,
+        "nonbuilding_recall": 0.9214671568849002,
+        "nonbuilding_f1": 0.8619872280350879,
+        "nonbuilding_iou": 0.7574495201374289,
+        "macro_f1": 0.8796652408192276,
+        "miou": 0.7856253012098229,
+        "building_ap": 0.971126871837737
+      },
+      "constant_building_baseline": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1532959.0,
+        "tn": 0.0,
+        "fp": 1017778.0,
+        "fn": 0.0,
+        "oa": 0.6009866952178919,
+        "balanced_accuracy": 0.5,
+        "building_precision": 0.6009866952178919,
+        "building_recall": 1.0,
+        "building_f1": 0.7507703805572207,
+        "building_iou": 0.6009866952178919,
+        "nonbuilding_precision": 0.0,
+        "nonbuilding_recall": 0.0,
+        "nonbuilding_f1": 0.0,
+        "nonbuilding_iou": 0.0,
+        "macro_f1": 0.37538519027861034,
+        "miou": 0.30049334760894597,
+        "building_ap": 0.6009866952178919
+      },
+      "confusion_matrix": [
+        [
+          975751,
+          42027
+        ],
+        [
+          362001,
+          1170958
+        ]
+      ],
+      "metrics_path": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_163403_tnet_on_s2345/final_test/final_test_metrics.json"
+    },
+    {
+      "arm": "tnet_off",
+      "seed": 2345,
+      "run_dir": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_170945_tnet_off_s2345",
+      "threshold_from_validation": 0.74,
+      "checkpoint": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_170945_tnet_off_s2345/best_model.ckpt",
+      "candidate_sha256": "a598c00a0248ccb0989ffbc73dac1dad92dfff5a011e8d42c88a0ee548fb2413",
+      "test_at_validation_threshold": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1160632.0,
+        "tn": 1010613.0,
+        "fp": 7165.0,
+        "fn": 372327.0,
+        "oa": 0.8512226074267947,
+        "balanced_accuracy": 0.8750394515741552,
+        "building_precision": 0.9938645158362284,
+        "building_recall": 0.7571187487727983,
+        "building_f1": 0.8594867511170946,
+        "building_iou": 0.7535964636613676,
+        "nonbuilding_precision": 0.7307714000607402,
+        "nonbuilding_recall": 0.9929601543755121,
+        "nonbuilding_f1": 0.8419256239175114,
+        "nonbuilding_iou": 0.7270047946018466,
+        "macro_f1": 0.850706187517303,
+        "miou": 0.7403006291316071,
+        "building_ap": 0.9874858667281025
+      },
+      "test_at_0.5": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1378839.0,
+        "tn": 994569.0,
+        "fp": 23209.0,
+        "fn": 154120.0,
+        "oa": 0.9304793085292604,
+        "balanced_accuracy": 0.9383294072977952,
+        "building_precision": 0.9834463584698955,
+        "building_recall": 0.8994624122367265,
+        "building_f1": 0.9395814047462236,
+        "building_iou": 0.886047650382221,
+        "nonbuilding_precision": 0.8658296545017842,
+        "nonbuilding_recall": 0.9771964023588641,
+        "nonbuilding_f1": 0.9181483032051723,
+        "nonbuilding_iou": 0.8486822231968993,
+        "macro_f1": 0.928864853975698,
+        "miou": 0.8673649367895602,
+        "building_ap": 0.9874858667281025
+      },
+      "constant_building_baseline": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1532959.0,
+        "tn": 0.0,
+        "fp": 1017778.0,
+        "fn": 0.0,
+        "oa": 0.6009866952178919,
+        "balanced_accuracy": 0.5,
+        "building_precision": 0.6009866952178919,
+        "building_recall": 1.0,
+        "building_f1": 0.7507703805572207,
+        "building_iou": 0.6009866952178919,
+        "nonbuilding_precision": 0.0,
+        "nonbuilding_recall": 0.0,
+        "nonbuilding_f1": 0.0,
+        "nonbuilding_iou": 0.0,
+        "macro_f1": 0.37538519027861034,
+        "miou": 0.30049334760894597,
+        "building_ap": 0.6009866952178919
+      },
+      "confusion_matrix": [
+        [
+          1010613,
+          7165
+        ],
+        [
+          372327,
+          1160632
+        ]
+      ],
+      "metrics_path": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_170945_tnet_off_s2345/final_test/final_test_metrics.json"
+    },
+    {
+      "arm": "tnet_on",
+      "seed": 3456,
+      "run_dir": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_173633_tnet_on_s3456",
+      "threshold_from_validation": 0.65,
+      "checkpoint": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_173633_tnet_on_s3456/best_model.ckpt",
+      "candidate_sha256": "a598c00a0248ccb0989ffbc73dac1dad92dfff5a011e8d42c88a0ee548fb2413",
+      "test_at_validation_threshold": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1215760.0,
+        "tn": 983574.0,
+        "fp": 34204.0,
+        "fn": 317199.0,
+        "oa": 0.8622347188283229,
+        "balanced_accuracy": 0.8797370143729202,
+        "building_precision": 0.9726360119171432,
+        "building_recall": 0.7930805716265079,
+        "building_f1": 0.8737288096005531,
+        "building_iou": 0.7757712503421789,
+        "nonbuilding_precision": 0.7561457687082989,
+        "nonbuilding_recall": 0.9663934571193326,
+        "nonbuilding_f1": 0.8484385290640576,
+        "nonbuilding_iou": 0.736772244016189,
+        "macro_f1": 0.8610836693323054,
+        "miou": 0.756271747179184,
+        "building_ap": 0.9774797052747113
+      },
+      "test_at_0.5": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1342943.0,
+        "tn": 947543.0,
+        "fp": 70235.0,
+        "fn": 190016.0,
+        "oa": 0.8979702729054387,
+        "balanced_accuracy": 0.903519044076631,
+        "building_precision": 0.9502999622128281,
+        "building_recall": 0.876046260858901,
+        "building_f1": 0.9116636463273772,
+        "building_iou": 0.8376671818881558,
+        "nonbuilding_precision": 0.8329616310011173,
+        "nonbuilding_recall": 0.9309918272943608,
+        "nonbuilding_f1": 0.8792527572254362,
+        "nonbuilding_iou": 0.7845236853304455,
+        "macro_f1": 0.8954582017764067,
+        "miou": 0.8110954336093006,
+        "building_ap": 0.9774797052747113
+      },
+      "constant_building_baseline": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1532959.0,
+        "tn": 0.0,
+        "fp": 1017778.0,
+        "fn": 0.0,
+        "oa": 0.6009866952178919,
+        "balanced_accuracy": 0.5,
+        "building_precision": 0.6009866952178919,
+        "building_recall": 1.0,
+        "building_f1": 0.7507703805572207,
+        "building_iou": 0.6009866952178919,
+        "nonbuilding_precision": 0.0,
+        "nonbuilding_recall": 0.0,
+        "nonbuilding_f1": 0.0,
+        "nonbuilding_iou": 0.0,
+        "macro_f1": 0.37538519027861034,
+        "miou": 0.30049334760894597,
+        "building_ap": 0.6009866952178919
+      },
+      "confusion_matrix": [
+        [
+          983574,
+          34204
+        ],
+        [
+          317199,
+          1215760
+        ]
+      ],
+      "metrics_path": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_173633_tnet_on_s3456/final_test/final_test_metrics.json"
+    },
+    {
+      "arm": "tnet_off",
+      "seed": 3456,
+      "run_dir": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_180906_tnet_off_s3456",
+      "threshold_from_validation": 0.63,
+      "checkpoint": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_180906_tnet_off_s3456/best_model.ckpt",
+      "candidate_sha256": "a598c00a0248ccb0989ffbc73dac1dad92dfff5a011e8d42c88a0ee548fb2413",
+      "test_at_validation_threshold": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1246626.0,
+        "tn": 999852.0,
+        "fp": 17926.0,
+        "fn": 286333.0,
+        "oa": 0.880717220160291,
+        "balanced_accuracy": 0.8978013044608655,
+        "building_precision": 0.985824228659636,
+        "building_recall": 0.8132154871721944,
+        "building_f1": 0.8912393910157995,
+        "building_iou": 0.8038158857684483,
+        "nonbuilding_precision": 0.7773780599213954,
+        "nonbuilding_recall": 0.9823871217495367,
+        "nonbuilding_f1": 0.867941021622309,
+        "nonbuilding_iou": 0.766692405784477,
+        "macro_f1": 0.8795902063190543,
+        "miou": 0.7852541457764626,
+        "building_ap": 0.9829187162171299
+      },
+      "test_at_0.5": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1342554.0,
+        "tn": 985588.0,
+        "fp": 32190.0,
+        "fn": 190405.0,
+        "oa": 0.9127330649925884,
+        "balanced_accuracy": 0.9220823904523738,
+        "building_precision": 0.9765847314118119,
+        "building_recall": 0.8757925032567734,
+        "building_f1": 0.923446445527621,
+        "building_iou": 0.8577803135675901,
+        "nonbuilding_precision": 0.8380900226446926,
+        "nonbuilding_recall": 0.9683722776479743,
+        "nonbuilding_f1": 0.898533165038648,
+        "nonbuilding_iou": 0.8157605263441051,
+        "macro_f1": 0.9109898052831344,
+        "miou": 0.8367704199558477,
+        "building_ap": 0.9829187162171299
+      },
+      "constant_building_baseline": {
+        "n_valid": 2550737,
+        "n_building": 1532959,
+        "n_nonbuilding": 1017778,
+        "tp": 1532959.0,
+        "tn": 0.0,
+        "fp": 1017778.0,
+        "fn": 0.0,
+        "oa": 0.6009866952178919,
+        "balanced_accuracy": 0.5,
+        "building_precision": 0.6009866952178919,
+        "building_recall": 1.0,
+        "building_f1": 0.7507703805572207,
+        "building_iou": 0.6009866952178919,
+        "nonbuilding_precision": 0.0,
+        "nonbuilding_recall": 0.0,
+        "nonbuilding_f1": 0.0,
+        "nonbuilding_iou": 0.0,
+        "macro_f1": 0.37538519027861034,
+        "miou": 0.30049334760894597,
+        "building_ap": 0.6009866952178919
+      },
+      "confusion_matrix": [
+        [
+          999852,
+          17926
+        ],
+        [
+          286333,
+          1246626
+        ]
+      ],
+      "metrics_path": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/runs/20261028_180906_tnet_off_s3456/final_test/final_test_metrics.json"
+    }
+  ],
+  "tnet_on_mean_std": {
+    "test_at_validation_threshold": {
+      "oa": {
+        "mean": 0.8265395452373177,
+        "std": 0.04515278298254959
+      },
+      "miou": {
+        "mean": 0.7050969222112116,
+        "std": 0.06374371419317361
+      },
+      "building_f1": {
+        "mean": 0.8342336475590397,
+        "std": 0.051407633104424304
+      },
+      "building_iou": {
+        "mean": 0.7177916435538538,
+        "std": 0.07422973175928271
+      },
+      "nonbuilding_f1": {
+        "mean": 0.8174556490629347,
+        "std": 0.03772098345394345
+      },
+      "nonbuilding_iou": {
+        "mean": 0.6924022008685692,
+        "std": 0.05331712687172997
+      },
+      "building_ap": {
+        "mean": 0.9722570022596001,
+        "std": 0.004759357729015369
+      }
+    },
+    "test_at_0.5": {
+      "oa": {
+        "mean": 0.8627869775153874,
+        "std": 0.04798286987202565
+      },
+      "miou": {
+        "mean": 0.758141682608388,
+        "std": 0.07081532131198885
+      },
+      "building_f1": {
+        "mean": 0.8747238579674969,
+        "std": 0.05207437671851908
+      },
+      "building_iou": {
+        "mean": 0.7798221835229291,
+        "std": 0.08041218029596128
+      },
+      "nonbuilding_f1": {
+        "mean": 0.8472583969905195,
+        "std": 0.04137411119359785
+      },
+      "nonbuilding_iou": {
+        "mean": 0.7364611816938469,
+        "std": 0.06131285916682755
+      },
+      "building_ap": {
+        "mean": 0.9722570022596001,
+        "std": 0.004759357729015369
+      }
+    }
+  },
+  "tnet_off_mean_std": {
+    "test_at_validation_threshold": {
+      "oa": {
+        "mean": 0.8644484580992343,
+        "std": 0.014980905425372719
+      },
+      "miou": {
+        "mean": 0.7603074088474394,
+        "std": 0.022880276388976186
+      },
+      "building_f1": {
+        "mean": 0.8741016949708975,
+        "std": 0.016025939725878114
+      },
+      "building_iou": {
+        "mean": 0.776600133974684,
+        "std": 0.025373289341170124
+      },
+      "nonbuilding_f1": {
+        "mean": 0.8531160890177576,
+        "std": 0.013383095492620008
+      },
+      "nonbuilding_iou": {
+        "mean": 0.744014683720195,
+        "std": 0.020441865572231127
+      },
+      "building_ap": {
+        "mean": 0.9827687791248839,
+        "std": 0.0047938150764463994
+      }
+    },
+    "test_at_0.5": {
+      "oa": {
+        "mean": 0.9173850538099381,
+        "std": 0.011497224886268231
+      },
+      "miou": {
+        "mean": 0.8447165665344766,
+        "std": 0.01990283022201758
+      },
+      "building_f1": {
+        "mean": 0.9278716091801987,
+        "std": 0.010241270616105295
+      },
+      "building_iou": {
+        "mean": 0.8655622799705199,
+        "std": 0.017910693389857832
+      },
+      "nonbuilding_f1": {
+        "mean": 0.903326202187346,
+        "std": 0.013100572616922023
+      },
+      "nonbuilding_iou": {
+        "mean": 0.8238708530984333,
+        "std": 0.021912397575434308
+      },
+      "building_ap": {
+        "mean": 0.9827687791248839,
+        "std": 0.0047938150764463994
+      }
+    }
+  }
+}

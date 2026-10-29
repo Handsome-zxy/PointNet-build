@@ -1,0 +1,45 @@
+{
+  "candidate_box": [
+    405185.0,
+    405262.0,
+    3112900.0,
+    3112968.0
+  ],
+  "analysis_box": [
+    405155.0,
+    405292.0,
+    3112870.0,
+    3112998.0
+  ],
+  "building_points": 1532959,
+  "nonbuilding_points": 1017778,
+  "total_points": 2550737,
+  "building_fraction": 0.6009866952178919,
+  "building_unique": 1492976,
+  "building_duplicates": 39983,
+  "noise_unique": 988297,
+  "noise_duplicates": 29481,
+  "cross_class_conflicts": 0,
+  "components_total": 12,
+  "components_intersecting_candidate": 5,
+  "components_cut": [],
+  "spatial_gap_to_train_small_m": 167.81000000005588,
+  "spatial_gap_to_old_test_m": 281.570000000007,
+  "label_source": {
+    "building": "non_ground_points_build_big.las",
+    "nonbuilding": "non_ground_points_noise_big.las"
+  },
+  "checks": {
+    "both_classes_present": true,
+    "no_cut_buildings": true,
+    "no_cross_class_conflicts": true,
+    "spatially_disjoint_from_train": true,
+    "spatially_disjoint_from_old_test": true
+  },
+  "ready_for_freeze": true,
+  "frozen": true,
+  "las_path": "/mnt/whu_stg/zxy/projects/pointcloud/BuildingPointNet/cache/final_test_candidate_2026-10-28.las",
+  "las_sha256": "a598c00a0248ccb0989ffbc73dac1dad92dfff5a011e8d42c88a0ee548fb2413",
+  "status": "frozen",
+  "frozen_at": "2026-10-28T18:34:30.332019"
+}
